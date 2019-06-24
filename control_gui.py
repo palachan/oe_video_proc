@@ -33,6 +33,7 @@ from PySide.QtGui import (QApplication, QMainWindow, QFrame, QLabel, QCheckBox, 
 open_ephys_path = 'C:/Users/Jeffrey_Taube/Desktop/Analysis/plugin-GUI/Builds/VisualStudio2013/x64/Release64/bin/open-ephys.exe'
 config_path =  'C:/Users/Jeffrey_Taube/Desktop/Analysis/plugin-GUI/Builds/VisualStudio2013/x64/Release64/bin'
 default_config = config_path + '/lastConfig.xml'
+data_save_dir = 'C:/Users/Jeffrey_Taube/Desktop/'
 
 """"""""""""""""""
 
@@ -581,7 +582,7 @@ class MainWindow(QMainWindow):
             current_session_number = str(session_number.toPlainText())
             current_session_type = str(session_type.currentText())
             
-            recdir = 'C:/Users/Jeffrey_Taube/Desktop/' + current_whose_animal + '/' + current_animal_number
+            recdir = data_save_dir + current_whose_animal + '/' + current_animal_number
             
             if not os.path.exists(recdir):
                 os.makedirs(recdir)
